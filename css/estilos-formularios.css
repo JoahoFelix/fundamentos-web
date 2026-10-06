@@ -1,0 +1,194 @@
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================== */
+:root {
+    --color-primary: #3b82f6;       /* Azul moderno */
+    --color-primary-hover: #2563eb;
+    --color-bg: #f8fafc;            /* Fondo general suave */
+    --color-card: #ffffff;          /* Fondo del contenedor */
+    --color-text: #1e293b;          /* Texto principal oscuro */
+    --color-text-muted: #64748b;    /* Texto secundario */
+    --color-border: #cbd5e1;        /* Borde base */
+    --color-focus: #3b82f6;         /* Color de enfoque estándar */
+    --color-enter-active: #10b981;  /* Verde distintivo para el evento Enter */
+    --radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================
+   CONTENEDOR DEL FORMULARIO (RESPONSIVO)
+   ========================================== */
+.form-container {
+    background-color: var(--color-card);
+    width: 100%;
+    max-width: 500px;
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+}
+
+.form-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.form-header h2 {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    margin-bottom: 6px;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================
+   GRUPOS DE CAMPOS Y ETIQUETAS
+   ========================================== */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+/* ==========================================
+   CONTROLES (INPUT TEXT Y SELECT)
+   ========================================== */
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background-color: #ffffff;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+/* Efecto Focus Estándar */
+.form-control:focus {
+    border-color: var(--color-focus);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Ajuste específico para selects */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* ==========================================
+   ESTILO DINÁMICO: CONTROL ACTIVO POR ENTER
+   ========================================== */
+.form-control.control-activo {
+    border-color: var(--color-enter-active) !important;
+    background-color: #f0fdf4 !important; /* Verde pastel muy suave */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
+}
+
+.form-group.activo-por-enter label {
+    color: var(--color-enter-active);
+}
+
+/* ==========================================
+   BOTONES PLANOS Y ELEGANTES
+   ========================================== */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-align: center;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    color: var(--color-text);
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (Media Queries)
+   ========================================== */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse; /* Se apilan en móviles */
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

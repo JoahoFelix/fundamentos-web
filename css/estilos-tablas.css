@@ -1,0 +1,49 @@
+/* Estilos generales de la tabla para darle un aspecto moderno */
+.tabla-moderna {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Mantiene los bordes redondeados en la cabecera */
+  margin: 20px 0;
+}
+
+/* Estilos para la cabecera (thead) */
+.tabla-moderna thead tr {
+  background-color: #7b0aaf;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.tabla-moderna th,
+.tabla-moderna td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 1. FILAS CEBREADAS (Zebra Striping) */
+/* Aplica un color de fondo ligeramente diferente a las filas pares */
+.tabla-moderna tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* 2. HOVER SOBRE LA FILA ACTIVA */
+/* Cambia el color de fondo y añade una transición suave al pasar el cursor */
+.tabla-moderna tbody tr {
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.tabla-moderna tbody tr:hover {
+  background-color: #e9ecef; /* Color destacado al pasar el mouse */
+  cursor: pointer; /* Cambia el cursor para indicar interactividad */
+}
+
+/* Eliminar el borde inferior de la última fila para mayor prolijidad */
+.tabla-moderna tbody tr:last-child td {
+  border-bottom: none;
+}
